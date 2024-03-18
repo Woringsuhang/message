@@ -1,4 +1,4 @@
-module su
+module github.com/Woringsuhang/message
 
 go 1.20
 
