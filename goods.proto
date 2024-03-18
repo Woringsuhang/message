@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+package goods;
+option go_package="./goods";
+
+message CreateGoodsReq {
+    string Image = 10;
+    string Name  = 20;
+}
+message CreateSkuReq {
+    int64 GoodsId  =10;
+    repeated  string Name = 20;
+    repeated string value = 30;
+}
+message CreateSkuRes{
+    int64 Msg = 1;
+}
+message GoodsResp {
+    int64 Msg = 1;
+}
+
+service StreamGreeter {
+    rpc GoodsCreated(CreateGoodsReq) returns (GoodsResp);
+    rpc CreateSku(CreateSkuReq) returns (CreateSkuRes);
+
+}
